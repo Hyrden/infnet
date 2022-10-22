@@ -1,12 +1,18 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
-import java.util.Date;
-
 public class Software extends Product{
 	
 	private String license;
 	private int maxPCAllowed,//Specify how many PCs can run the software simultaneously
 				currentInstallations;//Specify the current number of PCs running the software
+	
+	@Override
+	public String toString() {
+		return super.toString() + ";license:" + getLicense() + 
+								  ";maxPCAllowed:" + getMaxPCAllowed() +
+								  ";currentInstallations:" + getCurrentInstallations();
+								  
+	}
 	
 	public String getLicense() {
 		return license;

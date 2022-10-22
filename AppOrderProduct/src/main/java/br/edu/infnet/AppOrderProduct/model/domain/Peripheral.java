@@ -8,6 +8,14 @@ public class Peripheral extends Product{
 	private int warrant;//Specify the warrant given by the manufacturer by months. Ex: a year: 12
 	private float weight;
 	
+	@Override
+	public String toString() {
+		return super.toString() + ";firmware:" + getFirmware() + 
+								  ";warrant:" + getWarrant() +
+								  ";weight:" + getWeight();
+								  
+	}
+	
 	public String getFirmware() {
 		return firmware;
 	}
