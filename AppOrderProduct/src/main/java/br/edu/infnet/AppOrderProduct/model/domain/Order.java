@@ -1,10 +1,10 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Order {
 	private int orderNumber;
-	private Date createdDate;
+	private LocalDateTime createdDate;
 	private String paymentMethod;
 	
 	public int getOrderNumber() {
@@ -13,10 +13,10 @@ public class Order {
 	public void setOrderNumber(int orderNumber) {
 		this.orderNumber = orderNumber;
 	}
-	public Date getCreatedDate() {
+	public LocalDateTime getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(LocalDateTime createdDate) {
 		this.createdDate = createdDate;
 	}
 	public String getPaymentMethod() {
