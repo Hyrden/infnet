@@ -23,6 +23,30 @@ public class SoftwareTest implements ApplicationRunner {
 		
 		System.out.println("Software - "+bitdefender);
 		
+		Software gpn = new Software();
+		gpn.setName("NOPING");
+		gpn.setDescription("The No.1 GPN software!!!");
+		gpn.setCompany("NOPING");
+		gpn.setCategory("Software");
+		gpn.setCode("S-NOPING-V-1");
+		gpn.setLicense("Y1A7-8Q44-8Y8T-4TRW");
+		gpn.setMaxPCAllowed(1);
+		gpn.setCurrentInstallations(1);
+		
+		System.out.println("Software - "+gpn);
+		
+		Software windows = new Software();
+		windows.setName("Microsoft Windows 11");
+		windows.setDescription("The No.1 OS software!!!");
+		windows.setCompany("Microsoft");
+		windows.setCategory("Software");
+		windows.setCode("S-Windows-11-1");
+		windows.setLicense("Y1A7-8Q44-8Y8T-4TRW");
+		windows.setMaxPCAllowed(3);
+		windows.setCurrentInstallations(1);
+		
+		System.out.println("Software - "+windows);
+		
 	}
 
 }

@@ -1,5 +1,7 @@
 package br.edu.infnet.AppOrderProduct;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -24,8 +26,39 @@ public class AccountTest implements ApplicationRunner {
 		acc.setAddressPostalCode("13058-414");
 		acc.setAddressState("SP");
 		acc.setAddressStreet("Rua Maestro Armando Belardi");
+		acc.setBirthday(LocalDate.of(1995,5,18));
 		
 		System.out.println("Account - "+acc);
+		
+		Account acc2 = new Account();
+		acc2.setName("Francisca Carla Ana Campos");
+		acc2.setDocumentNumber("89622147844");
+		acc2.setEmail("francisca@qualitest.com.br");
+		acc2.setAddressCity("Campinas");
+		acc2.setAddressComplement("AP 404");
+		acc2.setAddressCountry("BRAZIL");
+		acc2.setAddressNumber("588");
+		acc2.setAddressPostalCode("13058-181");
+		acc2.setAddressState("SP");
+		acc2.setAddressStreet("Avenida Frei Damião");
+		acc2.setBirthday(LocalDate.of(19959,1,15));
+		
+		System.out.println("Account - "+acc2);
+		
+		Account acc3 = new Account();
+		acc3.setName("Gabrielly Sueli Giovana Baptista");
+		acc3.setDocumentNumber("47736658404");
+		acc3.setEmail("gabriellysuelibaptista@usa.com");
+		acc3.setAddressCity("Petrolina");
+		acc3.setAddressComplement("AP 404");
+		acc3.setAddressCountry("BRAZIL");
+		acc3.setAddressNumber("872");
+		acc3.setAddressPostalCode("56320-716");
+		acc3.setAddressState("PE");
+		acc3.setAddressStreet("Rua Três");
+		acc3.setBirthday(LocalDate.of(1997,11,8));
+		
+		System.out.println("Account - "+acc3);
 		
 	}
 

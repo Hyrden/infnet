@@ -1,6 +1,10 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
+import java.time.LocalDate;
+
 public class Account{	
+	
+	private LocalDate birthday;
 	private String name,
 				   documentNumber,
 				   email,
@@ -12,6 +16,13 @@ public class Account{
 				   addressPostalCode,
 				   addressCity;
 	
+	public LocalDate getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
+	}
 	 public String getAddressComplement() {
 		return addressComplement;
 	}
@@ -26,6 +37,7 @@ public class Account{
 		return "name:"+getName()+
 			   ";documentNumber:"+getDocumentNumber()+
 			   ";email:"+getEmail()+
+			   ";birthday:"+getBirthday()+
 			   "Address: "+getAddressStreet()+
 			   ", N:"+getAddressNumber()+ 
 			   " - "+getAddressComplement()+

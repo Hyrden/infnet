@@ -23,6 +23,7 @@ public class GameTest implements ApplicationRunner{
 		g1.setReleased(true);
 		g1.setValue(29.90);
 		g1.setReleaseDate(LocalDate.of(2015,5,18));
+		
 		System.out.println("Game - " + g1);
 		
 		Game g2 = new Game();
@@ -35,6 +36,7 @@ public class GameTest implements ApplicationRunner{
 		g2.setReleased(false);
 		g2.setValue(29.90);
 		g2.setReleaseDate(LocalDate.of(2023,2,24));
+		
 		System.out.println("Game - " + g2);
 		
 		Game g3 = new Game();
@@ -47,6 +49,7 @@ public class GameTest implements ApplicationRunner{
 		g3.setReleased(true);
 		g3.setValue(129.90);
 		g3.setReleaseDate(LocalDate.of(2020,12,9));
+		
 		System.out.println("Game - " + g3);
 		
 		
