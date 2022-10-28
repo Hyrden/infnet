@@ -7,6 +7,13 @@ public class Order {
 	private LocalDateTime createdDate;
 	private String paymentMethod;
 	
+	@Override
+	public String toString() {
+		return "Number:"+getOrderNumber()+
+			   ";Created Date:"+getCreatedDate()+
+			   ";Payment Method:"+getPaymentMethod();
+	}
+	
 	public int getOrderNumber() {
 		return orderNumber;
 	}

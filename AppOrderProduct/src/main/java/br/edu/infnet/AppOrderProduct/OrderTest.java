@@ -12,21 +12,15 @@ import br.edu.infnet.AppOrderProduct.model.domain.Order;
 public class OrderTest implements ApplicationRunner {
 
 	@Override
-	public void run(ApplicationArguments args) throws Exception {		
-		Order o1 = new Order();
-		o1.setCreatedDate(LocalDateTime.now());
-		o1.setOrderNumber(3);
-		o1.setPaymentMethod("Pagseguro");
+	public void run(ApplicationArguments args) throws Exception {
+		Order o1 = DataFactory.createOrder(3, LocalDateTime.now(), "Pagseguro");
+		System.out.println("Order 1 - "+o1);
 		
-		Order o2 = new Order();
-		o2.setCreatedDate(LocalDateTime.now().minusMonths(3));
-		o2.setOrderNumber(2);
-		o2.setPaymentMethod("Paypal");
+		Order o2 = DataFactory.createOrder(2, LocalDateTime.now().minusMonths(3), "Paypal");
+		System.out.println("Order 2 - "+o2);
 		
-		Order o3 = new Order();
-		o3.setCreatedDate(LocalDateTime.now().minusMonths(5));
-		o3.setOrderNumber(1);
-		o3.setPaymentMethod("EBANX");		
+		Order o3 = DataFactory.createOrder(1, LocalDateTime.now().minusMonths(5), "EBANX");	
+		System.out.println("Order 3 - "+o1);		
 	}
 
 }
