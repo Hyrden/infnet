@@ -20,7 +20,7 @@ public class OrderTest implements ApplicationRunner {
 		System.out.println("Order 2 - "+o2);
 		
 		Order o3 = DataFactory.createOrder(1, LocalDateTime.now().minusMonths(5), "EBANX");	
-		System.out.println("Order 3 - "+o1);		
+		System.out.println("Order 3 - "+o3);		
 	}
 
 }

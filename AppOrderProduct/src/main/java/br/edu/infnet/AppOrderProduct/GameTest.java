@@ -16,17 +16,17 @@ public class GameTest implements ApplicationRunner{
 		Game g1 = DataFactory.createGame(29.90, "The Witcher 3", "G-CDPROJEKTRED-TW-3", "As war rages on throughout the Northern Realms, you take on the greatest contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.", 
 				"Adventure", "CD Projekt RED", true, false, LocalDate.of(2015,5,18));
 		
-		System.out.println("Game - " + g1);
+		System.out.println("Game 1 - " + g1);
 		
 		Game g2 = DataFactory.createGame(199.90, "Kerbal Space Program 2", "G-INTERCEPTGAMES-KSP-2", "Kerbal Space Program 2 is the sequel to the acclaimed space-flight simulation game Kerbal Space Program. Enter the next generation of space adventure with exciting new parts, stunning visuals, fully revamped UI and Map View, and rich new environments to explore.", 
 				"Simulation", "\"Intercept Games\"", false, true, LocalDate.of(2023,2,24));
 		
-		System.out.println("Game - " + g2);
+		System.out.println("Game 2 - " + g2);
 		
 		Game g3 = DataFactory.createGame(129.90, "Cyberpunk 2077", "G-CDPROJEKTRED-CP2077-1", "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.", 
 				"Adventure", "CD Projekt RED", true, false, LocalDate.of(2020,12,9));
 		
-		System.out.println("Game - " + g3);
+		System.out.println("Game 3 - " + g3);
 		
 		
 	}
