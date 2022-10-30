@@ -2,6 +2,7 @@ package br.edu.infnet.AppOrderProduct.model.domain;
 
 public abstract class Product {
 	
+	private Integer id;
 	private double value;
 	private String name,
 				   code,
@@ -11,14 +12,21 @@ public abstract class Product {
 	
 	@Override
 	public String toString() {
-		return "name:"+getName()+
+		return "id:"+getId()+
+			   ";name:"+getName()+
 			   ";code:"+getCode()+
 			   /*"description:"+getDescription()+*/
 			   ";category:"+getCategory()+
 			   ";company:"+getCompany()+
 			   ";value:"+getValue();
 	}
-	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
