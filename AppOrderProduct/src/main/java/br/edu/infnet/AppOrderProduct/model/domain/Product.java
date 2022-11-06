@@ -1,14 +1,34 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "tproduct")
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Product {
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private double value;
 	private String name,
 				   code,
-				   description,
 				   category,
-				   company;	
+				   company;
+	@Column(name="description",length=10000)
+	private String description;
+	@ManyToOne
+	@JoinColumn(name="idOrder")
+	private Order order;
 	
 	@Override
 	public String toString() {
@@ -73,6 +93,12 @@ public abstract class Product {
 
 	public void setValue(double d) {
 		this.value = d;
+	}
+	public Order getOrder() {
+		return order;
+	}
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 	
 }

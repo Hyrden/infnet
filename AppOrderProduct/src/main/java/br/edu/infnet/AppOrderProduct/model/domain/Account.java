@@ -1,9 +1,23 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "taccount")
 public class Account{	
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private LocalDate birthday;
 	private String name,
@@ -15,7 +29,14 @@ public class Account{
 				   addressState,
 				   addressCountry,
 				   addressPostalCode,
-				   addressCity;	
+				   addressCity;
+	@ManyToOne
+	@JoinColumn(name="idUser")
+	private User user;
+	@OneToMany
+	@JoinColumn(name="idAccount")
+	private List<Order> orders;
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -103,5 +124,18 @@ public class Account{
 	}
 	public void setAddressCity(String addressCity) {
 		this.addressCity = addressCity;
-	}	
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+	
 }

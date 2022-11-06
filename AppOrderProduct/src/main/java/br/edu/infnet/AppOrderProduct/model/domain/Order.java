@@ -3,16 +3,32 @@ package br.edu.infnet.AppOrderProduct.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+@Entity
+@Table (name = "torder")
 public class Order {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 	private Integer orderNumber;
 	private LocalDateTime createdDate;
 	private String paymentMethod;
+	@ManyToOne
+	@JoinColumn(name="idAccount")
 	private Account account;
-	private List<Product> products;	
+	@OneToMany
+	@JoinColumn(name="idOrder")
+	private List<Product> products;
 	
 	public Order() {
-		//Como iniciei manipulando datas diferentes do LocalDateTime.now(), decidi não colocar nada neste construtor por enquanto
+		createdDate = LocalDateTime.now();
 	}
 	public Order(Account acc) {
 		this();
@@ -63,5 +79,5 @@ public class Order {
 	}
 	public void setProducts(List<Product> products) {
 		this.products = products;
-	}
+	}	
 }

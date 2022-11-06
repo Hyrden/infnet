@@ -4,42 +4,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <title>Peripheral Registration</title>
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	  <div class="container-fluid">
-	    <ul class="navbar-nav">
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/">Home</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/game/list">Games</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/software/list">Softwares</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/peripheral/list">Peripherals</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/product/list">Products</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/order/list">Order</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link active" href="/account/list">Account</a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<!-- Table -->
 	<div class="container">
 	  <h2>Peripherals</h2>
+	  <button type="button" class="btn btn-dark" onclick="location.href = '/peripheral';" >New Peripheral</button>
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>

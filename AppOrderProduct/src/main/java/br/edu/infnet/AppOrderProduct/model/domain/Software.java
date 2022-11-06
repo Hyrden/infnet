@@ -1,5 +1,10 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "tsoftware")
 public class Software extends Product{
 	
 	private String license;

@@ -2,6 +2,11 @@ package br.edu.infnet.AppOrderProduct.model.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "tgame")
 public class Game extends Product{
 	
 	private boolean preOrder;//if true, the user can buy the game before the release date

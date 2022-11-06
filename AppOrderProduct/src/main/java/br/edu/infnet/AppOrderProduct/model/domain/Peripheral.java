@@ -1,7 +1,9 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
-import java.util.Date;
-
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table (name = "tperipheral")
 public class Peripheral extends Product{
 	
 	private String firmware;

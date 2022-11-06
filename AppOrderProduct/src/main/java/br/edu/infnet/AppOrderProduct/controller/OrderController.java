@@ -1,37 +1,36 @@
 package br.edu.infnet.AppOrderProduct.controller;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
+import br.edu.infnet.AppOrderProduct.service.OrderService;
 
 @Controller
 public class OrderController {
-private static Map<Integer,Order> mpOrder = new HashMap<Integer,Order>();
-	
-	public static void insertOrder(Order order) {
-		mpOrder.put(order.getId(), order);
+	@Autowired
+	OrderService orderService;
+	@GetMapping(value="/order")
+	public String orderScreen() {
+		return "order/register";
 	}
-	public static void deleteOrder(Integer id) {
-		mpOrder.remove(id);
-	}
-	public static Collection<Order> getOrderList(){
-		return mpOrder.values();
+	@PostMapping(value="/order/insert")
+	public String insert(Order order) {
+		orderService.insertOrder(order);
+		return "redirect:/order/list";
 	}
 	@GetMapping(value="/order/list")
 	public String orderScreen(Model model) {
-		model.addAttribute("orders",getOrderList());
+		model.addAttribute("orders",orderService.getOrderList());
 		return "order/list";
 	}
 	@GetMapping(value="/order/{id}/delete")
 	public String deletion(@PathVariable Integer id) {
-		deleteOrder(id);
+		orderService.deleteOrder(id);
 		return "redirect:/order/list";
 	}
 }
