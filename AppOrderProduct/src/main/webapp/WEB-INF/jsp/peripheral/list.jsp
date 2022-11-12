@@ -17,6 +17,7 @@
 	  <h2>Peripherals</h2>
 	  <c:if test="${not empty user}">
 	  	<c:if test="${user.isAdmin}">
+	  		<p style="font-weight: bold;color: red">You're an admin, that's why you can create product records</p>
 	  		<button type="button" class="btn btn-dark" onclick="location.href = '/peripheral';" >New Peripheral</button>
 	  	</c:if>
 	  </c:if>
