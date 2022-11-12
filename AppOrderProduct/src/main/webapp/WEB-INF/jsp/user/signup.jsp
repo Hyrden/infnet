@@ -26,13 +26,11 @@
 		      <label>Password:<span class="required" style="color:red" >*</span></label>
 		      <input type="password" class="form-control" placeholder="Enter password" name="password" required>
 		    </div>
-		    <!-- <div class="form-group">
+		    <div class="form-group">
 		      <label>Repeat Password:<span class="required" style="color:red" >*</span></label>
-		      <input type="password" class="form-control" placeholder="Confirm password" name="confirmPassword" required="true">
-		    </div> -->
-		    <!--<c:if test="{&.password != &.confirmPassword}">
-		    	<p style="font-style: italic;color:red">The password field and the password confirmation field must match!!!</p>
-		    </c:if>-->
+		      <input type="password" class="form-control" placeholder="Confirm password" name="confirmPassword" required>
+		    </div>		    
+			<p style="font-weight: bold;color: red">${message}</p>
 		    <button type="submit" class="btn btn-default">Submit</button>
 		  </form>
 		</div>
