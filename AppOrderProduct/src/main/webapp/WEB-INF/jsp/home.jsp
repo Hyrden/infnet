@@ -22,10 +22,11 @@
 		O usuário só será inserido caso as senhas estejam iguais;<br>
 		4 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
 		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;<br>
-		5 - Em vez de criar a classe de Address com os mesmos nomes de campo da API, eu retornei um objeto na minha interface
-		e usei a conversão de objeto para Mapa e mapeei os campos;
+		5 - O usuário só pode inserir novos produtos se for admin, pois não faz sentido o cliente cadastrar produtos;<br>
+		6 - Para manter o padrão do meu projeto de classes e variáveis em inglês, em vez de criar a classe Address com os mesmos nomes dos campos que retornam na API do CEP, 
+		eu retornei um Object na minha interface, usei a conversão de Object para Map e mapeei os campos;<br>
+		7 - Address tem ligação com Account em vez de User;
 	</p>
-	<p style="font-weight: bold;">OBS: Address tem ligação com Account em vez de User</p>
 	<h4>Credenciais para testes:</h4>
 	<p>Administrador:<br>
 		Login: adminUser@test.com<br>

@@ -15,7 +15,11 @@
 	<!-- Table -->
 	<div class="container">
 	  <h2>Peripherals</h2>
-	  <button type="button" class="btn btn-dark" onclick="location.href = '/peripheral';" >New Peripheral</button>
+	  <c:if test="${not empty user} }">
+	  	<c:if test="${user.isAdmin} }">
+	  		<button type="button" class="btn btn-dark" onclick="location.href = '/peripheral';" >New Peripheral</button>
+	  	</c:if>
+	  </c:if>
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
