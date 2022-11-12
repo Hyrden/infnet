@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.service.UserService;
 
@@ -18,15 +17,7 @@ public class UserController {
 	
 	@PostMapping(value="/user/insert")
 	public String insert(User u, @RequestParam String confirmPassword, Model model) {
-		System.out.println(u.getPassword()+" "+confirmPassword);
-		if(u.getPassword().equals(confirmPassword)) {
-			userService.insertUser(u);
-			return "redirect:/";
-		}
-		else {
-			model.addAttribute("message","Password and Confirm Password does not match");
-			return "user/signup";
-		}
+		return userService.validatePassword(u, confirmPassword, model);
 	}
 	
 	@GetMapping(value="/user/list")

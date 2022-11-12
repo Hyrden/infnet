@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.repository.UserRepository;
@@ -21,6 +22,15 @@ public class UserService {
 	}
 	public Collection<User> getUserList(){
 		return (Collection<User>) userRep.findAll();
+	}
+	public String validatePassword(User u, String confirmPassword, Model model) {
+		if(u.getPassword().equals(confirmPassword)) {
+			insertUser(u);
+			return "redirect:/";
+		}else {
+			model.addAttribute("message","Password and Confirm Password does not match");
+			return "user/signup";
+		}
 	}
 	public User validate(String email, String password) {
 		User user = userRep.findByEmail(email);		
