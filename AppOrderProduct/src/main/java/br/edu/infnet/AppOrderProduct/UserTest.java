@@ -15,7 +15,7 @@ public class UserTest implements ApplicationRunner {
 	UserService userService;
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		User admin = DataFactory.createUser("Administrator", "jpgalvao.programmer@gmail.com","12345", true);
+		User admin = DataFactory.createUser("Administrator", "adminUser@test.com","12345", true);
 		System.out.println("User - "+admin);
 		userService.insertUser(admin);
 		User standard = DataFactory.createUser("Standard User", "standardUser@test.com","12345", null);

@@ -23,7 +23,15 @@
 		4 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
 		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;
 	</p>
-	<p style="font-weight: bold;">OBS: Address tem ligação com Account em vez de User</p><br>
+	<p style="font-weight: bold;">OBS: Address tem ligação com Account em vez de User</p>
+	<h4>Credenciais para testes:</h4>
+	<p>Administrador:<br>
+		Login: adminUser@test.com<br>
+		Senha: 12345<br>
+		Usuário Padrão:<br>
+		Login: standardUser@test.com<br>
+		Senha: 12345<br>
+	</p>
 	<h4>Bugs que identifiquei (e tentarei resolver depois, caso dê tempo):</h4>
 	<p>
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
@@ -36,7 +44,7 @@
 	  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 	  <div class="col-md-4 d-flex align-items-center">  
 	  		<span class="mb-3 mb-md-0 text-muted">Aluno: João Pedro Galvão e Albuquerque Lima - joaopedro.lima@al.infnet.edu.br
-	  		<a target="_blank" href="https://www.linkedin.com/in/jpedro-galvao/">Linkedin</a>
+	  		<a target="_blank" href="https://www.linkedin.com/in/jpedro-galvao/"> - Linkedin</a>
 	  		</span>    
 		</div>
 	  </footer>
