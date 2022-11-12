@@ -13,7 +13,7 @@
 	<!-- Navbar -->
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<h1>Saudações, professores e alunos</h1>
-	<p style="font-weight: bold;color: red">Status: FEATURE 4 em andamento</p>
+	<p style="font-weight: bold;color: yellow;background-color: black">Status: FEATURE 4 terminada, faltando apenas as APIs</p>
 	<h4>Segue lista de todas as customizações feitas até o presente momento:</h4>
 	<p>
 		1 - Nas telas de inserção, podem existir campos obrigatório ou opcionais;<br>
@@ -26,6 +26,7 @@
 		6 - Para manter o padrão do meu projeto de classes e variáveis em inglês, em vez de criar a classe Address com os mesmos nomes dos campos que retornam na API do CEP, 
 		eu retornei um Object na minha interface, usei a conversão de Object para Map e mapeei os campos;<br>
 		7 - Address tem ligação com Account em vez de User;
+		8 - O campo OrderNumber dentro do jsp register de order é gerado automaticamente por uma função javascript que eu criei, para simular número de pedido real;
 	</p>
 	<h4>Credenciais para testes:</h4>
 	<p>Administrador:<br>

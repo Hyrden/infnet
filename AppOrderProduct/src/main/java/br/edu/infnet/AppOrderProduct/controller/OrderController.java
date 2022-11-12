@@ -10,23 +10,32 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
+import br.edu.infnet.AppOrderProduct.service.AccountService;
 import br.edu.infnet.AppOrderProduct.service.OrderService;
+import br.edu.infnet.AppOrderProduct.service.ProductService;
 
 @Controller
 public class OrderController {
 	@Autowired
 	OrderService orderService;
+	@Autowired
+	AccountService accountService;
+	@Autowired
+	ProductService productService;
+	
 	@GetMapping(value="/order")
-	public String orderScreen() {
+	public String orderScreen(Model model,@SessionAttribute("user") User user) {
+		model.addAttribute("accounts", accountService.getAccList(user));
+		model.addAttribute("products", productService.getProductList());
 		return "order/register";
 	}
 	@PostMapping(value="/order/insert")
-	public String insert(Order order) {
+	public String insert(Order order,@SessionAttribute("user") User user) {
 		orderService.insertOrder(order);
 		return "redirect:/order/list";
 	}
 	@GetMapping(value="/order/list")
-	public String orderScreen(Model model,@SessionAttribute("user") User user) {
+	public String orderList(Model model,@SessionAttribute("user") User user) {
 		model.addAttribute("orders",orderService.getOrderList(user,model));
 		return "order/list";
 	}

@@ -37,9 +37,13 @@ public class AccountService {
 			return (Collection<Account>) accRep.getAccList(u.getId());
 		}
 	}
+	public Collection<Account> getAccList(User u){
+		return (Collection<Account>) accRep.getAccList(u.getId());
+	}
 	public Address getPostalCode(String postalCode) {
 		Object obj = addressClient.getPostalCode(postalCode);
 		ObjectMapper mapObject = new ObjectMapper();
+		@SuppressWarnings("unchecked")
 		Map <String,String> mapObj = mapObject.convertValue(obj, Map.class);
 		Address address = DataFactory.createAddress(mapObj.get("logradouro"), null, mapObj.get("complemento"),mapObj.get("uf"), mapObj.get("localidade"), postalCode,"BRAZIL");
 		System.out.println(address);

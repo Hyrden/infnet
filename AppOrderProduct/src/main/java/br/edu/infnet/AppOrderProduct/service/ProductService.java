@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Product;
+import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.repository.ProductRepository;
 
 @Service
@@ -21,5 +22,8 @@ public class ProductService {
 	}
 	public Collection<Product> getProductList(){
 		return (Collection<Product>) prodRep.findAll();
+	}
+	public Collection<Product> getProductList(User user){
+		return (Collection<Product>) prodRep.getProdList(user.getId());
 	}
 }

@@ -9,7 +9,7 @@
 <title>Order Registration</title>
 </head>
 <body>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>	
 	<!-- Navbar -->
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<!-- Table -->
@@ -20,24 +20,25 @@
 	  <table class="table table-striped">
 	    <thead>
 	      <tr>
-	      	<th>Id</th>
 	        <th>Order Number</th>
 	        <th>Created Date</th>
 	        <th>Payment Method</th>	        
 	        <th>Account</th>
-	        <th>Products</th>  
+	        <th>Products</th>
 	        <th></th>     
 	      </tr>
 	    </thead>
 	    <tbody>
 	    <c:forEach var="o" items="${orders}">
 	    	<tr>
-		        <td>${o.id}</td>
 		        <td>${o.orderNumber}</td>
 		        <td>${o.createdDate}</td>
 		        <td>${o.paymentMethod}</td>
 		        <td>${o.account.name}</td>
-		        <td>${o.products}</td>
+		        <td>
+		        <c:forEach var="p" items="${o.products}">
+		        	Name: ${p.name} Value: ${p.value};
+		        </c:forEach>
 		        <td><a href="/order/${o.id}/delete">delete</a></td>
 	      	</tr>
 	    </c:forEach>	
