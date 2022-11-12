@@ -3,13 +3,15 @@ package br.edu.infnet.AppOrderProduct.model.domain;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table (name = "torder")
@@ -20,12 +22,14 @@ public class Order {
 	private Integer orderNumber;
 	private LocalDateTime createdDate;
 	private String paymentMethod;
-	@ManyToOne
-	@JoinColumn(name="idAccount")
+	@OneToOne(cascade = CascadeType.DETACH) 
+	@JoinColumn(name = "idAccount")
 	private Account account;
-	@OneToMany
-	@JoinColumn(name="idOrder")
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Product> products;
+	@ManyToOne
+	@JoinColumn(name = "idUser")
+	private User user;
 	
 	public Order() {
 		createdDate = LocalDateTime.now();
@@ -79,5 +83,11 @@ public class Order {
 	}
 	public void setProducts(List<Product> products) {
 		this.products = products;
-	}	
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 }

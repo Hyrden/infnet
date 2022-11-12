@@ -1,7 +1,6 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
 import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +23,12 @@ public class User{
 	@OneToMany
 	@JoinColumn(name="idUser")
 	private List<Account> accounts;
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<Order> orders;
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<Product> products;
 	
 	public User() {
 		this.isAdmin = false;
@@ -71,6 +76,17 @@ public class User{
 	}
 	public void setAccounts(List<Account> accounts) {
 		this.accounts = accounts;
-	}	
-	
+	}
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 }

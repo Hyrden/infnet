@@ -21,7 +21,7 @@
 		3 - Na tela de inserção de usuário, há um campo de repetir a senha. 
 		O usuário só será inserido caso as senhas estejam iguais;<br>
 		4 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
-		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;
+		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;<br>
 		5 - Em vez de criar a classe de Address com os mesmos nomes de campo da API, eu retornei um objeto na minha interface
 		e usei a conversão de objeto para Mapa e mapeei os campos;
 	</p>

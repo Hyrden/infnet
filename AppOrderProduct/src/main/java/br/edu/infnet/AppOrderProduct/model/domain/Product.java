@@ -1,5 +1,6 @@
 package br.edu.infnet.AppOrderProduct.model.domain;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,9 +28,12 @@ public abstract class Product {
 				   company;
 	@Column(name="description",length=10000)
 	private String description;
+	@ManyToMany(mappedBy = "products")
+	private List<Order> orders;
+	
 	@ManyToOne
-	@JoinColumn(name="idOrder")
-	private Order order;
+	@JoinColumn(name = "idUser")
+	private User user;
 	
 	@Override
 	public String toString() {
@@ -94,11 +99,16 @@ public abstract class Product {
 	public void setValue(double d) {
 		this.value = d;
 	}
-	public Order getOrder() {
-		return order;
+	public List<Order> getOrders() {
+		return orders;
 	}
-	public void setOrder(Order order) {
-		this.order = order;
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
-	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
