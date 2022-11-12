@@ -35,7 +35,7 @@
 		Login: standardUser@test.com<br>
 		Senha: 12345<br>
 	</p>
-	<h4>Bugs que identifiquei (e tentarei resolver depois, caso dê tempo):</h4>
+	<h4>Bugs que identifiquei (e tentarei resolver depois, caso der tempo):</h4>
 	<p>
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
 		2 - [VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,
