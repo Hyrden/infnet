@@ -48,7 +48,7 @@
 		      <label>Release Date:<span class="required" style="color:red" >*</span></label>
 		      <input type="date" class="form-control" name="releaseDate" required>
 		    </div>
-		    <button type="submit" class="btn btn-default">Submit</button>
+		    <button type="submit" class="btn btn-dark">Submit</button>
 		  </form>
 		</div>
 </body>

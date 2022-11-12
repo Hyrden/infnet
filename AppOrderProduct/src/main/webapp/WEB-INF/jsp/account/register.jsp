@@ -14,6 +14,13 @@
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<!-- ******** -->
 	  <div class="container">
+	  	<form action="/postalcode" class="form-inline" method="post">
+	    <div class="form-group">
+	      <label>Postal Code:</label><span class="required" style="color:red" >*</span>
+	      <input type="text" class="form-control" name="postalCode" required>
+	    </div>
+	    <button type="submit" class="btn btn-dark">Search</button>
+		</form>
 		<h2>Account Registration</h2>
 		  <form action="/account/insert" method="post">
 		  	<div class="form-group">
@@ -31,36 +38,9 @@
 		    <div class="form-group">
 		      <label>Birthday:<span class="required" style="color:red" >*</span></label>
 		      <input type="date" class="form-control" name="birthday" required>
-		    </div>		    
-		    <div class="form-group">
-		      <label>Street:</label>
-		      <input type="text" class="form-control" name="addressStreet">
-		    </div>		    
-		    <div class="form-group">
-		      <label>Number:</label>
-		      <input type="number" class="form-control" name="addressNumber">
-		    </div>	    
-		    <div class="form-group">
-		      <label>Complement:</label>
-		      <input type="text" class="form-control" name="addressComplement">
-		    </div>	    		    	    
-		    <div class="form-group">
-		      <label>City:</label>
-		      <input type="text" class="form-control" name="addressCity">
 		    </div>
-		    <div class="form-group">
-		      <label>State:</label>
-		      <input type="text" class="form-control" name="addressState">
-		    </div>		    
-		    <div class="form-group">
-		      <label>Postal Code:</label>
-		      <input type="text" class="form-control" name="addressPostalCode">
-		    </div>			    	    
-		    <div class="form-group">
-		      <label>Country:</label>
-		      <input type="text" class="form-control" name="addressCountry">
-		    </div>	
-		    <button type="submit" class="btn btn-default">Submit</button>
+		    <c:import url="/WEB-INF/jsp/address.jsp"/>
+		    <button type="submit" class="btn btn-dark">Submit</button>
 		  </form>
 		</div>
 </body>

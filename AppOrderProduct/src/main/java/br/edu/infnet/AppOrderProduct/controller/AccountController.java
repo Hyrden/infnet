@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
@@ -35,5 +36,10 @@ public class AccountController {
 	public String deletion(@PathVariable Integer id) {
 		accountService.deleteAcc(id);
 		return "redirect:/account/list";
+	}
+	@PostMapping(value = "/postalcode")
+	public String getPostalCode(Model model, @RequestParam String postalCode){
+		model.addAttribute("address", accountService.getPostalCode(postalCode));
+		return "account/register";
 	}
 }

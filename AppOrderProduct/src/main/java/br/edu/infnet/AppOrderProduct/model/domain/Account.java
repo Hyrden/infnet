@@ -3,6 +3,7 @@ package br.edu.infnet.AppOrderProduct.model.domain;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table (name = "taccount")
@@ -19,24 +23,20 @@ public class Account{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate birthday;
 	private String name,
 				   documentNumber,
-				   email,
-				   addressStreet,
-				   addressNumber,
-				   addressComplement,
-				   addressState,
-				   addressCountry,
-				   addressPostalCode,
-				   addressCity;
+				   email;
 	@ManyToOne
 	@JoinColumn(name="idUser")
 	private User user;
 	@OneToMany
 	@JoinColumn(name="idAccount")
 	private List<Order> orders;
-	
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="idAddress")
+	private Address address;
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -44,14 +44,14 @@ public class Account{
 			   ";name:"+getName()+
 			   ";documentNumber:"+getDocumentNumber()+
 			   ";email:"+getEmail()+
-			   ";birthday:"+getBirthday()+
-			   "Address: "+getAddressStreet()+
+			   ";birthday:"+getBirthday();
+			   /*"Address: "+getAddressStreet()+
 			   ", N:"+getAddressNumber()+ 
 			   " - "+getAddressComplement()+
 			   " - "+getAddressCity()+
 			   " - "+getAddressState()+ 
 			   " - "+getAddressCountry()+
-			   " - Zip Code: "+getAddressPostalCode();
+			   " - Zip Code: "+getAddressPostalCode();*/
 	}
 	public Integer getId() {
 		return id;
@@ -64,18 +64,6 @@ public class Account{
 	}
 	public void setBirthday(LocalDate birthday) {
 		this.birthday = birthday;
-	}
-	 public String getAddressComplement() {
-		return addressComplement;
-	}
-	public void setAddressComplement(String addressComplement) {
-		this.addressComplement = addressComplement;
-	}
-	public String getAddressNumber() {
-		return addressNumber;
-	}
-	public void setAddressNumber(String addressNumber) {
-		this.addressNumber = addressNumber;
 	}
 	public String getName() {
 		return name;
@@ -95,36 +83,6 @@ public class Account{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getAddressStreet() {
-		return addressStreet;
-	}
-	public void setAddressStreet(String addressStreet) {
-		this.addressStreet = addressStreet;
-	}
-	public String getAddressState() {
-		return addressState;
-	}
-	public void setAddressState(String addressState) {
-		this.addressState = addressState;
-	}
-	public String getAddressCountry() {
-		return addressCountry;
-	}
-	public void setAddressCountry(String addressCountry) {
-		this.addressCountry = addressCountry;
-	}
-	public String getAddressPostalCode() {
-		return addressPostalCode;
-	}
-	public void setAddressPostalCode(String addressPostalCode) {
-		this.addressPostalCode = addressPostalCode;
-	}
-	public String getAddressCity() {
-		return addressCity;
-	}
-	public void setAddressCity(String addressCity) {
-		this.addressCity = addressCity;
-	}
 	public User getUser() {
 		return user;
 	}
@@ -137,5 +95,10 @@ public class Account{
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
-	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 }

@@ -52,7 +52,7 @@
 		      <label>Weight:<span class="required" style="color:red" >*</span></label>
 		      <input type="number" class="form-control" name="weight" required>
 		    </div>
-		    <button type="submit" class="btn btn-default">Submit</button>
+		    <button type="submit" class="btn btn-dark">Submit</button>
 		  </form>
 		</div>
 </body>

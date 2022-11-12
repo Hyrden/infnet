@@ -38,11 +38,7 @@
 		        <td>${a.documentNumber}</td>
 		        <td>${a.email}</td>
 		        <td>${a.birthday}</td>
-		        <td>
-		        	<!-- Não formatar a aba da tag pre -->
-			        <pre>${a.addressStreet}, ${a.addressNumber} - ${a.addressComplement}.
-${a.addressCity} - ${a.addressState} - ${a.addressCountry}. Postal Code: ${a.addressPostalCode}</pre>		        	
-		        </td>
+		        <td>${a.address}</td>
 		        <th>${a.user.name}</th>	
 		        <td><a href="/account/${a.id}/delete">delete</a></td>
 	      	</tr>

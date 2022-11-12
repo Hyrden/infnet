@@ -1,11 +1,18 @@
 package br.edu.infnet.AppOrderProduct.service;
 
 import java.util.Collection;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import br.edu.infnet.AppOrderProduct.DataFactory;
+import br.edu.infnet.AppOrderProduct.clients.IAddressClient;
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
+import br.edu.infnet.AppOrderProduct.model.domain.Address;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.repository.AccountRepository;
 
@@ -13,6 +20,8 @@ import br.edu.infnet.AppOrderProduct.repository.AccountRepository;
 public class AccountService {
 	@Autowired
 	AccountRepository accRep;
+	@Autowired
+	IAddressClient addressClient;
 	
 	public void insertAcc(Account account) {
 		accRep.save(account);
@@ -28,4 +37,12 @@ public class AccountService {
 			return (Collection<Account>) accRep.getAccList(u.getId());
 		}
 	}
+	public Address getPostalCode(String postalCode) {
+		Object obj = addressClient.getPostalCode(postalCode);
+		ObjectMapper mapObject = new ObjectMapper();
+		Map <String,String> mapObj = mapObject.convertValue(obj, Map.class);
+		Address address = DataFactory.createAddress(mapObj.get("logradouro"), null, mapObj.get("complemento"),mapObj.get("uf"), mapObj.get("localidade"), postalCode,"BRAZIL");
+		System.out.println(address);
+		return address;
+	}	
 }

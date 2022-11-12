@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
+import br.edu.infnet.AppOrderProduct.model.domain.Address;
 import br.edu.infnet.AppOrderProduct.model.domain.Game;
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
 import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
@@ -56,23 +57,27 @@ public class DataFactory {
 		peripheral.setWeight(weight);
 		return peripheral;
 	}
-	public static Account createAccount(LocalDate birthday,String name, String documentNumber, String email, String addressStreet,
-			String addressNumber, String addressComplement, String addressState, String addressCity, String addressPostalCode, 
-			String addressCountry, User user) {
+	public static Account createAccount(LocalDate birthday,String name, String documentNumber, String email, User user, Address address) {
 		Account account = new Account();
 		account.setName(name);
 		account.setDocumentNumber(documentNumber);
-		account.setEmail(email);
-		account.setAddressCity(addressCity);
-		account.setAddressComplement(addressComplement);
-		account.setAddressCountry(addressCountry);
-		account.setAddressNumber(addressNumber);
-		account.setAddressPostalCode(addressPostalCode);
-		account.setAddressState(addressState);
-		account.setAddressStreet(addressStreet);
+		account.setEmail(email);		
 		account.setBirthday(birthday);
 		account.setUser(user);
+		account.setAddress(address);
 		return account;
+	}
+	public static Address createAddress(String addressStreet,String addressNumber, String addressComplement, 
+			String addressState, String addressCity, String addressPostalCode, String addressCountry) {
+		Address address = new Address();
+		address.setAddressCity(addressCity);
+		address.setAddressComplement(addressComplement);
+		address.setAddressCountry(addressCountry);
+		address.setAddressNumber(addressNumber);
+		address.setAddressPostalCode(addressPostalCode);
+		address.setAddressState(addressState);
+		address.setAddressStreet(addressStreet);
+		return address;
 	}
 	public static Order createOrder(Integer orderNumber, LocalDateTime createdDate, String paymentMethod, Account acc,List<Product> products){
 		Order order = new Order(acc);

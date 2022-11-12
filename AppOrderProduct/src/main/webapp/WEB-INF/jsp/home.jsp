@@ -22,6 +22,8 @@
 		O usuário só será inserido caso as senhas estejam iguais;<br>
 		4 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
 		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;
+		5 - Em vez de criar a classe de Address com os mesmos nomes de campo da API, eu retornei um objeto na minha interface
+		e usei a conversão de objeto para Mapa e mapeei os campos;
 	</p>
 	<p style="font-weight: bold;">OBS: Address tem ligação com Account em vez de User</p>
 	<h4>Credenciais para testes:</h4>
@@ -43,8 +45,8 @@
 	<div class="b-example-divider"></div>
 	  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 	  <div class="col-md-4 d-flex align-items-center">  
-	  		<span class="mb-3 mb-md-0 text-muted">Aluno: João Pedro Galvão e Albuquerque Lima - joaopedro.lima@al.infnet.edu.br
-	  		<a target="_blank" href="https://www.linkedin.com/in/jpedro-galvao/"> - Linkedin</a>
+	  		<span class="mb-3 mb-md-0 text-muted">Aluno: João Pedro Galvão e Albuquerque Lima - joaopedro.lima@al.infnet.edu.br - 
+	  		<a target="_blank" href="https://www.linkedin.com/in/jpedro-galvao/">Linkedin</a>
 	  		</span>    
 		</div>
 	  </footer>

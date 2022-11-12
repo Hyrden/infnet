@@ -52,7 +52,7 @@
 		      <label>Current Installation:<span class="required" style="color:red" >*</span></label>
 		      <input type="number" class="form-control" name="weight" value=0 readonly="readonly">
 		    </div>
-		    <button type="submit" class="btn btn-default">Submit</button>
+		    <button type="submit" class="btn btn-dark">Submit</button>
 		  </form>
 		</div>
 </body>
