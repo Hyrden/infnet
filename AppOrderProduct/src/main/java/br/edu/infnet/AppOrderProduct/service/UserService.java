@@ -32,9 +32,12 @@ public class UserService {
 			return "user/signup";
 		}
 	}
-	public User validate(String email, String password) {
+	public User validate(String email, String password,Model model) {
 		User user = userRep.findByEmail(email);		
 		if(user != null && password.equals(user.getPassword()))return user;
-		else return null;
+		else {
+			model.addAttribute("message","Your login or password is invalid");
+			return null;
+		}
 	}
 }

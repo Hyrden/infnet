@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
-
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.service.AccountService;
@@ -18,8 +17,8 @@ public class AccountController {
 	AccountService accountService;
 	
 	@GetMapping(value="/account/list")
-	public String accountScreen(Model model) {
-		model.addAttribute("accounts",accountService.getAccList());
+	public String accountScreen(Model model,@SessionAttribute("user") User user) {
+		model.addAttribute("accounts",accountService.getAccList(user,model));
 		return "account/list";
 	}
 	@GetMapping(value="/account")

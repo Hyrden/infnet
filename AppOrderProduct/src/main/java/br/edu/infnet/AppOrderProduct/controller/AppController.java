@@ -29,7 +29,7 @@ public class AppController {
 	}
 	@PostMapping(value="/login")
 	public String checkAuth(Model model,@RequestParam String email, @RequestParam String password) {
-		User u = userService.validate(email,password);
+		User u = userService.validate(email,password,model);
 		if(u != null) {
 			model.addAttribute("user",u);
 			return "home";

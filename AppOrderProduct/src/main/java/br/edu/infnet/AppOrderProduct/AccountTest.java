@@ -19,6 +19,8 @@ public class AccountTest implements ApplicationRunner {
 		/* Gerei esses dados fictícios utilizando o website  https://www.4devs.com.br/gerador_de_pessoas */
 		User user = new User();
 		user.setId(1);		
+		User user2 = new User();
+		user2.setId(2);
 		Account acc = DataFactory.createAccount(LocalDate.of(1995,5,18), "Benjamin Antonio Caio Ribeiro", "88696268814",
 				"benjaminantonioribeiro@piscinasegura.com.br", "Rua Maestro Armando Belardi","812", "AP 404", "SP", "Campinas", 
 				"13058-414", "BRAZIL",user);
@@ -26,7 +28,7 @@ public class AccountTest implements ApplicationRunner {
 		accountService.insertAcc(acc);
 		Account acc2 = DataFactory.createAccount(LocalDate.of(1959,1,15), "Francisca Carla Ana Campos", "89622147844",
 				"francisca@qualitest.com.br", "Avenida Frei Damião","588", "AP 404", "SP", "Campinas", 
-				"13058-181", "BRAZIL",user);		
+				"13058-181", "BRAZIL",user2);		
 		System.out.println("Account - "+acc2);
 		accountService.insertAcc(acc2);
 		Account acc3 = DataFactory.createAccount(LocalDate.of(1997,11,8), "Gabrielly Sueli Giovana Baptista", "47736658404",

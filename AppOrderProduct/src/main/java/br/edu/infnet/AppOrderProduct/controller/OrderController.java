@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
+import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.service.OrderService;
 
 @Controller
@@ -24,8 +26,8 @@ public class OrderController {
 		return "redirect:/order/list";
 	}
 	@GetMapping(value="/order/list")
-	public String orderScreen(Model model) {
-		model.addAttribute("orders",orderService.getOrderList());
+	public String orderScreen(Model model,@SessionAttribute("user") User user) {
+		model.addAttribute("orders",orderService.getOrderList(user,model));
 		return "order/list";
 	}
 	@GetMapping(value="/order/{id}/delete")
