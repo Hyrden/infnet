@@ -15,8 +15,8 @@
 	<!-- Table -->
 	<div class="container">
 	  <h2>Softwares</h2>
-	  <c:if test="${not empty user} }">
-	  	<c:if test="${user.isAdmin} }">
+	  <c:if test="${not empty user}">
+	  	<c:if test="${user.isAdmin}">
 	  		<button type="button" class="btn btn-dark" onclick="location.href = '/software';" >New Software</button>
 	  	</c:if>
 	  </c:if>
