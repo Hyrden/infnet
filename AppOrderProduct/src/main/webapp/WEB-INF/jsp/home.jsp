@@ -20,13 +20,16 @@
 		2 - Na tela de login, é exibida uma mensagem caso o usuário digite as credenciais erradas;<br>
 		3 - Na tela de inserção de usuário, há um campo de repetir a senha. 
 		O usuário só será inserido caso as senhas estejam iguais;<br>
-		4 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
+		4 - No serviço de usuário tem uma validação que impede o cliente de cadastrar mais de uma conta com o mesmo email;<br>
+		5 - O usuário tem um campo boolean a mais, que serve para diferenciar um admin de usuários comuns. 
 		O admin consegue enxergar toda a lista de pedidos e de contas, enquanto o usuário comum só pode ver as dele;<br>
-		5 - O usuário só pode inserir novos produtos se for admin, pois não faz sentido o cliente cadastrar produtos;<br>
-		6 - Para manter o padrão do meu projeto de classes e variáveis em inglês, em vez de criar a classe Address com os mesmos nomes dos campos que retornam na API do CEP, 
+		6 - O usuário só pode inserir novos produtos se for admin, pois não faz sentido o cliente cadastrar produtos;<br>
+		7 - O usuário pode ver todas as listas de produtos cadastrados, afinal, ele é o cliente;<br>
+		8 - Para manter o padrão do meu projeto de classes e variáveis em inglês, em vez de criar a classe Address com os mesmos nomes dos campos que retornam na API do CEP, 
 		eu retornei um Object na minha interface, usei a conversão de Object para Map e mapeei os campos;<br>
-		7 - Address tem ligação com Account em vez de User;
-		8 - O campo OrderNumber dentro do jsp register de order é gerado automaticamente por uma função javascript que eu criei, para simular número de pedido real;
+		9 - Address tem ligação com Account em vez de User;<br>
+		10 - O campo OrderNumber dentro do jsp register de order é gerado automaticamente por uma função javascript que eu criei, para simular número de pedido real;<br>
+		Obs: Essas customizações foram feitas tomando como base a regra de negócio do projeto.
 	</p>
 	<h4>Credenciais para testes:</h4>
 	<p>Administrador:<br>
@@ -39,9 +42,9 @@
 	<h4>Bugs que identifiquei (e tentarei resolver depois, caso der tempo):</h4>
 	<p>
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
-		2 - [VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,
+		2 - <s>[VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,
 		o botão de Sign Up desaparece, e o de Login vira Logout com o nome de usuário que foi tentado criar 
-		(porém o backend funciona corretamente, e o usuário não é criado);
+		(porém o backend funciona corretamente, e o usuário não é criado)</s> <span style="color: green;font-weight: bold">CORRIGIDO</span>;
 	</p>
 	<div class="container">
 	<div class="b-example-divider"></div>

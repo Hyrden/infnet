@@ -17,9 +17,8 @@ public class UserController {
 	
 	@PostMapping(value="/user/insert")
 	public String insert(User u, @RequestParam String confirmPassword, Model model) {
-		return userService.validatePassword(u, confirmPassword, model);
-	}
-	
+		return userService.validateSignup(u, confirmPassword, model);
+	}	
 	@GetMapping(value="/user/list")
 	public String userScreen(Model model) {
 		model.addAttribute("users",userService.getUserList());
