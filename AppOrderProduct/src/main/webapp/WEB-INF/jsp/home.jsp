@@ -13,7 +13,7 @@
 	<!-- Navbar -->
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<h1>Saudações, professores e alunos</h1>
-	<p style="font-weight: bold;color: green;">Status: FEATURE 4 concluída com API de User</p>
+	<p style="font-weight: bold;color: green;">Status: FEATURE 4 concluída com APIs de User e Account</p>
 	<h4>Segue lista de todas as customizações feitas até o presente momento:</h4>
 	<p>
 		1 - Nas telas de inserção, podem existir campos obrigatório ou opcionais;<br>

@@ -40,10 +40,12 @@
 		      <label>Company:<span class="required" style="color:red" >*</span></label>
 		      <input type="text" class="form-control" name="company" required>
 		    </div>
-		    <div class="form-group">
-		      <label>Pre Order:</label>
-		      <input type="checkbox" class="form-control" name="preOrder">
-		    </div>
+		    <div class="form-check">
+			  <input class="form-check-input" type="checkbox" name="preOrder">
+			  <label class="form-check-label" for="flexCheckDefault">
+			    Pre Order:
+			  </label>
+			</div>
 		    <div class="form-group">
 		      <label>Release Date:<span class="required" style="color:red" >*</span></label>
 		      <input type="date" class="form-control" name="releaseDate" required>
