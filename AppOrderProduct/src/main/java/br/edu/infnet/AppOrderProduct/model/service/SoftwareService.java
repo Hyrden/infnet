@@ -1,10 +1,8 @@
 package br.edu.infnet.AppOrderProduct.model.service;
 
-import java.util.Collection;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.edu.infnet.AppOrderProduct.model.domain.Software;
 import br.edu.infnet.AppOrderProduct.model.repository.SoftwareRepository;
 @Service
@@ -18,7 +16,7 @@ public class SoftwareService {
 	public void deleteSoftware(Integer id) {
 		softwareRep.deleteById(id);
 	}
-	public Collection<Software> getSoftwareList(){
-		return (Collection<Software>) softwareRep.findAll();
+	public List<Software> getSoftwareList(){
+		return (List<Software>) softwareRep.findAll();
 	}
 }

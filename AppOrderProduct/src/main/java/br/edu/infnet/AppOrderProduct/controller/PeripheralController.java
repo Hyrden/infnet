@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
+import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.model.service.PeripheralService;
 
 @Controller
@@ -19,7 +21,8 @@ public class PeripheralController {
 		return "peripheral/register";
 	}
 	@PostMapping(value="/peripheral/insert")
-	public String insert(Peripheral peripheral) {
+	public String insert(Peripheral peripheral,@SessionAttribute("user") User user) {
+		peripheral.setUser(user);
 		peripheralService.insertPeripheral(peripheral);
 		return "redirect:/peripheral/list";
 	}

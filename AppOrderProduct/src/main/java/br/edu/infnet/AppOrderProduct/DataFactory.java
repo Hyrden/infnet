@@ -17,7 +17,7 @@ import br.edu.infnet.AppOrderProduct.model.domain.Product;
 public class DataFactory {
 	
 	public static Game createGame(Double value,String name, String code, String description, String category,
-			String company, Boolean preOrder, LocalDate releaseDate) {
+			String company, Boolean preOrder, LocalDate releaseDate, User user) {
 		Game game = new Game();
 		game.setValue(value);
 		game.setName(name);
@@ -27,10 +27,11 @@ public class DataFactory {
 		game.setCompany(company);
 		game.setPreOrder(preOrder);
 		game.setReleaseDate(releaseDate);
+		game.setUser(user);
 		return game;
 	}
 	public static Software createSoftware(Double value,String name, String code, String description, String category,
-			String company,String license, Integer maxPCAllowed, Integer currentInstallations) {
+			String company,String license, Integer maxPCAllowed, Integer currentInstallations, User user) {
 		Software software = new Software();
 		software.setValue(value);
 		software.setName(name);
@@ -41,10 +42,11 @@ public class DataFactory {
 		software.setLicense(license);
 		software.setMaxPCAllowed(maxPCAllowed);
 		software.setCurrentInstallations(currentInstallations);
+		software.setUser(user);
 		return software;
 	}
 	public static Peripheral createPeripheral(Double value,String name, String code, String description, String category,
-			String company,String firmware, Integer warrant, Float weight) {
+			String company,String firmware, Integer warrant, Float weight, User user) {
 		Peripheral peripheral = new Peripheral();
 		peripheral.setValue(value);
 		peripheral.setName(name);
@@ -55,6 +57,7 @@ public class DataFactory {
 		peripheral.setFirmware(firmware);
 		peripheral.setWarrant(warrant);
 		peripheral.setWeight(weight);
+		peripheral.setUser(user);
 		return peripheral;
 	}
 	public static Account createAccount(LocalDate birthday,String name, String documentNumber, String email, User user, Address address) {

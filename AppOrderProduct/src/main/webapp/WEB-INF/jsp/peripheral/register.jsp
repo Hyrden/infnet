@@ -46,7 +46,7 @@
 		    </div>
 		    <div class="form-group">
 		      <label>Warrant:<span class="required" style="color:red" >*</span></label>
-		      <input type="date" class="form-control" name="warrant" required>
+		      <input type="number" class="form-control" name="warrant" required>
 		    </div>
 		    <div class="form-group">
 		      <label>Weight:<span class="required" style="color:red" >*</span></label>

@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Software;
+import br.edu.infnet.AppOrderProduct.model.domain.User;
 import br.edu.infnet.AppOrderProduct.model.service.SoftwareService;
 
 @Controller
@@ -20,7 +22,8 @@ public class SoftwareController {
 		return "software/register";
 	}
 	@PostMapping(value="/software/insert")
-	public String insert(Software software) {
+	public String insert(Software software,@SessionAttribute("user") User user) {
+		software.setUser(user);
 		softwareService.insertSoftware(software);
 		return "redirect:/software/list";
 	}

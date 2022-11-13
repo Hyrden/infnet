@@ -1,10 +1,8 @@
 package br.edu.infnet.AppOrderProduct.model.service;
 
-import java.util.Collection;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import br.edu.infnet.AppOrderProduct.model.domain.Game;
 import br.edu.infnet.AppOrderProduct.model.repository.GameRepository;
 
@@ -19,7 +17,7 @@ public class GameService {
 	public void deleteGame(Integer id) {
 		gameRepository.deleteById(id);
 	}
-	public Collection<Game> getGameList(){
-		return (Collection<Game>) gameRepository.findAll();
+	public List<Game> getGameList(){
+		return (List<Game>) gameRepository.findAll();
 	}
 }
