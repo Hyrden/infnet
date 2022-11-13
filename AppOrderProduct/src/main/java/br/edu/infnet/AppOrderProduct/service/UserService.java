@@ -32,7 +32,7 @@ public class UserService {
 				return "user/signup";
 			}
 			insertUser(u);
-			return "redirect:/";
+			return "redirect:/login";
 		}else {
 			model.addAttribute("message","Password and Confirm Password does not match");
 			model.addAttribute("user","");
