@@ -1,4 +1,4 @@
-package br.edu.infnet.AppOrderProduct.service;
+package br.edu.infnet.AppOrderProduct.model.service;
 
 import java.util.Collection;
 import java.util.Map;
@@ -14,7 +14,7 @@ import br.edu.infnet.AppOrderProduct.clients.IAddressClient;
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
 import br.edu.infnet.AppOrderProduct.model.domain.Address;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.repository.AccountRepository;
+import br.edu.infnet.AppOrderProduct.model.repository.AccountRepository;
 
 @Service
 public class AccountService {

@@ -1,4 +1,4 @@
-package br.edu.infnet.AppOrderProduct.repository;
+package br.edu.infnet.AppOrderProduct.model.repository;
 
 import java.util.List;
 

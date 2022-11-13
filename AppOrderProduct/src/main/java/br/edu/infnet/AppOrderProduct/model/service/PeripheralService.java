@@ -1,4 +1,4 @@
-package br.edu.infnet.AppOrderProduct.service;
+package br.edu.infnet.AppOrderProduct.model.service;
 
 import java.util.Collection;
 
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
-import br.edu.infnet.AppOrderProduct.repository.PeripheralRepository;
+import br.edu.infnet.AppOrderProduct.model.repository.PeripheralRepository;
 
 @Service
 public class PeripheralService {

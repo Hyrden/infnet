@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
-import br.edu.infnet.AppOrderProduct.service.PeripheralService;
+import br.edu.infnet.AppOrderProduct.model.service.PeripheralService;
 
 @Controller
 public class PeripheralController {

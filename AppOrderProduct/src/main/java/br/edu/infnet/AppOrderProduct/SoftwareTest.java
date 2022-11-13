@@ -7,7 +7,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Software;
-import br.edu.infnet.AppOrderProduct.service.SoftwareService;
+import br.edu.infnet.AppOrderProduct.model.service.SoftwareService;
 @Order(3)
 @Component
 public class SoftwareTest implements ApplicationRunner {

@@ -6,7 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.UserService;
+import br.edu.infnet.AppOrderProduct.model.service.UserService;
 
 @Order(1)
 @Component

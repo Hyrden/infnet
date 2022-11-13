@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Software;
-import br.edu.infnet.AppOrderProduct.service.SoftwareService;
+import br.edu.infnet.AppOrderProduct.model.service.SoftwareService;
 
 @Controller
 public class SoftwareController {

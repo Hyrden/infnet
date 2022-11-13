@@ -7,7 +7,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import br.edu.infnet.AppOrderProduct.service.ProductService;
+
+import br.edu.infnet.AppOrderProduct.model.service.ProductService;
 @Order(5)
 @Component
 public class ProductTest implements ApplicationRunner {

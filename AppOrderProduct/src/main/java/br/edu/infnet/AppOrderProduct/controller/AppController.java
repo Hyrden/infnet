@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.UserService;
+import br.edu.infnet.AppOrderProduct.model.service.UserService;
 
 @SessionAttributes("user")
 @Controller

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.AccountService;
+import br.edu.infnet.AppOrderProduct.model.service.AccountService;
 
 @Controller
 public class AccountController {

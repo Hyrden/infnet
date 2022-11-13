@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.AppOrderProduct.model.domain.Account;
 import br.edu.infnet.AppOrderProduct.model.domain.Address;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.AccountService;
+import br.edu.infnet.AppOrderProduct.model.service.AccountService;
 @Order(5)
 @Component
 public class AccountTest implements ApplicationRunner {

@@ -1,4 +1,4 @@
-package br.edu.infnet.AppOrderProduct.service;
+package br.edu.infnet.AppOrderProduct.model.service;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.repository.OrderRepository;
+import br.edu.infnet.AppOrderProduct.model.repository.OrderRepository;
 
 @Service
 public class OrderService {

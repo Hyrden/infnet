@@ -8,8 +8,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.AppOrderProduct.model.domain.Game;
-import br.edu.infnet.AppOrderProduct.service.GameService;
-import br.edu.infnet.AppOrderProduct.service.ProductService;
+import br.edu.infnet.AppOrderProduct.model.service.GameService;
+import br.edu.infnet.AppOrderProduct.model.service.ProductService;
 @Order(2)
 @Component
 public class GameTest implements ApplicationRunner{

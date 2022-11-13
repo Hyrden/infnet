@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Game;
-import br.edu.infnet.AppOrderProduct.service.GameService;
+import br.edu.infnet.AppOrderProduct.model.service.GameService;
 
 @Controller
 public class GameController {

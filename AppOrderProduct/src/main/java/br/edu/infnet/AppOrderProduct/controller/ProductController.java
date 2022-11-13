@@ -5,7 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import br.edu.infnet.AppOrderProduct.service.ProductService;
+
+import br.edu.infnet.AppOrderProduct.model.service.ProductService;
 
 @Controller
 public class ProductController {

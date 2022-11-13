@@ -6,7 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
-import br.edu.infnet.AppOrderProduct.service.PeripheralService;
+import br.edu.infnet.AppOrderProduct.model.service.PeripheralService;
 @Order(4)
 @Component
 public class PeripheralTest implements ApplicationRunner {	

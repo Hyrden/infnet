@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.AppOrderProduct.model.domain.Order;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.AccountService;
-import br.edu.infnet.AppOrderProduct.service.OrderService;
-import br.edu.infnet.AppOrderProduct.service.ProductService;
+import br.edu.infnet.AppOrderProduct.model.service.AccountService;
+import br.edu.infnet.AppOrderProduct.model.service.OrderService;
+import br.edu.infnet.AppOrderProduct.model.service.ProductService;
 
 @Controller
 public class OrderController {

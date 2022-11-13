@@ -1,9 +1,9 @@
-package br.edu.infnet.AppOrderProduct.repository;
+package br.edu.infnet.apiuser.model.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import br.edu.infnet.AppOrderProduct.model.domain.User;
+import br.edu.infnet.apiuser.model.domain.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer>{

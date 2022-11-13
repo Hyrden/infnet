@@ -13,7 +13,7 @@
 	<!-- Navbar -->
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<h1>Saudações, professores e alunos</h1>
-	<p style="font-weight: bold;color: yellow;background-color: black">Status: FEATURE 4 terminada, faltando apenas as APIs</p>
+	<p style="font-weight: bold;color: green;">Status: FEATURE 4 concluída com API de User</p>
 	<h4>Segue lista de todas as customizações feitas até o presente momento:</h4>
 	<p>
 		1 - Nas telas de inserção, podem existir campos obrigatório ou opcionais;<br>
@@ -39,7 +39,7 @@
 		Login: standardUser@test.com<br>
 		Senha: 12345<br>
 	</p>
-	<h4>Bugs que identifiquei (e tentarei resolver depois, caso der tempo):</h4>
+	<h4>Bugs que identifiquei (e tentarei resolver depois, caso eu tenha mais tempo):</h4>
 	<p>
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
 		2 - <s>[VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,

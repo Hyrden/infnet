@@ -14,7 +14,7 @@ import br.edu.infnet.AppOrderProduct.model.domain.Peripheral;
 import br.edu.infnet.AppOrderProduct.model.domain.Product;
 import br.edu.infnet.AppOrderProduct.model.domain.Software;
 import br.edu.infnet.AppOrderProduct.model.domain.User;
-import br.edu.infnet.AppOrderProduct.service.OrderService;
+import br.edu.infnet.AppOrderProduct.model.service.OrderService;
 
 @org.springframework.core.annotation.Order(6)
 @Component
