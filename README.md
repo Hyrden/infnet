@@ -3,8 +3,8 @@ Este repositório é dos commits da minha pós graduação de Arquitetura de Sof
 
 # informações
 
-api-account, api-order, api-product, api-user e AppOrderProduct:
-Cadeira de Java - Professor Elberth Moraes
+Os programas api-account, api-order, api-product, api-user e AppOrderProduct foram feitos para a seguinte cadeira:
+Java - Professor Elberth Moraes
 
 ## Instruções
 
