@@ -19,7 +19,6 @@ public class UserService {
 	public void delete(Integer id) {
 		userRep.deleteById(id);
 	}
-
 	public List<User> getList(){
 		return (List<User>) userRep.findAll();
 	}
