@@ -44,7 +44,10 @@
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
 		2 - <s>[VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,
 		o botão de Sign Up desaparece, e o de Login vira Logout com o nome de usuário que foi tentado criar 
-		(porém o backend funciona corretamente, e o usuário não é criado);</s> <span style="color: green;font-weight: bold">CORRIGIDO</span>
+		(porém o backend funciona corretamente, e o usuário não é criado);</s><span style="color: green;font-weight: bold">CORRIGIDO</span><br>
+		3 - <s>[BUG] Algo extremamente bizarro aconteceu: o jsp de registro de Order parou de passar account e product como objects e
+		passou a passar o id deles em formato de string. Estou tendo que fazer um paleativo para corrigir isso, pois não encontrei
+		razão nenhuma para tal comportamento;</s><span style="color: green;font-weight: bold">CORRIGIDO</span><br>
 	</p>
 	<div class="container">
 	<div class="b-example-divider"></div>

@@ -39,7 +39,7 @@
 		
 	    <div class="form-group">
 	      <label>Account:</label>
-	      <select name="account" class="form-control">
+	      <select name="accId" class="form-control">
 	      	<c:forEach var="a" items="${accounts}">
 	      		<option value="${a.id}">${a.name}</option>
 	      	</c:forEach>
@@ -50,7 +50,7 @@
 	      <label>Products:</label>
 	      	<c:forEach var="p" items="${products}">
 				<div class="form-check">
-				  <input class="form-check-input" type="checkbox" name="products" value="${p.id}">
+				  <input class="form-check-input" type="checkbox" name="prodIds" value="${p.id}">
 				  <label class="form-check-label"> ${p.name}</label>
 				</div>	   
 			</c:forEach>   

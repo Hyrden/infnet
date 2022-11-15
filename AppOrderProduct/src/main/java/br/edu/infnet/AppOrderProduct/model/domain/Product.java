@@ -34,7 +34,7 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private User user;
-	
+	public Product() {}
 	@Override
 	public String toString() {
 		return "id:"+getId()+
