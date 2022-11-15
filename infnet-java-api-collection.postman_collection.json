@@ -269,7 +269,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"orderNumber\": 5555,\r\n\t\"paymentMethod\": \"Pagseguro\",\r\n\t\"account\": {\r\n\t\t\"id\": 1\r\n\t},\r\n\t\"products\": [\r\n\t\t{\r\n\t\t\t\"id\": 1\r\n\t\t}\r\n\t]\r\n}",
+							"raw": "{\r\n\t\"orderNumber\": 5555,\r\n\t\"paymentMethod\": \"Pagseguro\",\r\n\t\"account\": {\r\n\t\t\"id\": 1        \r\n\t},\r\n    \"user\":{\r\n        \"id\":1\r\n    },\r\n\t\"products\": [\r\n\t\t{\r\n\t\t\t\"id\": 1\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 2\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 3\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 4\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 5\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 6\r\n\t\t},\r\n        {\r\n\t\t\t\"id\": 7\r\n\t\t}\r\n\t]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -295,7 +295,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.collectionVariables.set(\"id\", 5);"
+									"pm.collectionVariables.set(\"id\", 11);"
 								],
 								"type": "text/javascript"
 							}
