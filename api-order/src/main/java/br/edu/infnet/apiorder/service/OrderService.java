@@ -20,7 +20,6 @@ public class OrderService {
 		orderRep.deleteById(id);
 	}
 	public List<Order> getList(Integer id){
-		if(id==null)return (List<Order>) orderRep.findAll();
 		return orderRep.getList(id);
 	}
 	public List<Order> getAll(){

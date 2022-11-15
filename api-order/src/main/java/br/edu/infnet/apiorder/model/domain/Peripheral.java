@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class Peripheral extends Product{
 	
 	private String firmware;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private int warrant;//Specify the warrant given by the manufacturer by months. Ex: a year: 12
 	private float weight;
 	public Peripheral() {}

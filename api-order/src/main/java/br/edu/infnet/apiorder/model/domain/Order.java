@@ -10,8 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 @Entity
 @Table (name = "torder")
 public class Order {
@@ -26,7 +28,9 @@ public class Order {
 	private Account account;
 	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Product> products;
-	
+	@ManyToOne
+	@JoinColumn(name = "idUser")
+	private User user;
 	public Order() {
 		createdDate = LocalDateTime.now();
 	}

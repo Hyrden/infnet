@@ -45,7 +45,8 @@ public class Order {
 			   ";Created Date:"+getCreatedDate()+
 			   ";Payment Method:"+getPaymentMethod()+
 			   ";Account: "+account+
-			   ";Product Size:"+products.size();
+			   ";User: "+user+
+			   ";Products:"+products;
 	}
 	
 	public Account getAccount() {
@@ -89,5 +90,5 @@ public class Order {
 	}
 	public void setUser(User user) {
 		this.user = user;
-	}
+	}	
 }

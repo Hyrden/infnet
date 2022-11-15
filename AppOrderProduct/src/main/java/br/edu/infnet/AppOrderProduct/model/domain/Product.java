@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table (name = "tproduct")
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Product {
+public class Product {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -1,10 +1,15 @@
 package br.edu.infnet.apiorder.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 @Entity
 @Table (name = "tuser")
@@ -17,7 +22,9 @@ public class User{
 				   email,
 				   password;
 	private Boolean isAdmin;
-	
+	@OneToMany
+	@JoinColumn(name = "idUser")
+	private List<Order> orders;
 	public User() {
 		this.isAdmin = false;
 	}

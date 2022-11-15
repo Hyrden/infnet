@@ -30,7 +30,11 @@ public class OrderController {
 		return "order/register";
 	}
 	@PostMapping(value="/order/insert")
-	public String insert(Order order,@SessionAttribute("user") User user) {
+	public String insert(Order order,@SessionAttribute("user") User user) {	
+		/*Não sei porque, mas do nada o código parou de converter o objeto no html pro controller
+		 * e passou a apenas enviar o id em formato de string
+		 */
+		order.setUser(user);
 		orderService.insertOrder(order);
 		return "redirect:/order/list";
 	}
