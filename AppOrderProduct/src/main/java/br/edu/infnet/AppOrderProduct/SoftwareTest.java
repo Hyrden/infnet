@@ -29,7 +29,7 @@ public class SoftwareTest implements ApplicationRunner {
 		softwareService.insertSoftware(gpn);
 		
 		Software windows = DataFactory.createSoftware(199.9, "Microsoft Windows 11", "S-WINDOWS-11-1", 
-				"The No.1 GPN software!!!", "Software", "Microsoft", "P3HM4-WAM27-66ZXW-9PFTZ-CFZFV", 3, 1,u);		
+				"The No.1 Operational system!!!", "Software", "Microsoft", "P3HM4-WAM27-66ZXW-9PFTZ-CFZFV", 3, 1,u);		
 		System.out.println("Software 3 - "+windows);
 		softwareService.insertSoftware(windows);
 	}

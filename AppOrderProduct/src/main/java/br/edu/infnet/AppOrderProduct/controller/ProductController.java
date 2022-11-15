@@ -5,20 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-
-import br.edu.infnet.AppOrderProduct.model.domain.Product;
 import br.edu.infnet.AppOrderProduct.model.service.ProductService;
 
 @Controller
 public class ProductController {
 	@Autowired
 	ProductService productService;
-	
-	@GetMapping(value="/product/insert")
-	public String productScreen(Product product) {
-		productService.insertProduct(product);
-		return "redirect:/product/list";
-	}
 	
 	@GetMapping(value="/product/list")
 	public String productScreen(Model model) {

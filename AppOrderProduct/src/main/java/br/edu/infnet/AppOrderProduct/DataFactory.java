@@ -82,12 +82,13 @@ public class DataFactory {
 		address.setAddressStreet(addressStreet);
 		return address;
 	}
-	public static Order createOrder(Integer orderNumber, LocalDateTime createdDate, String paymentMethod, Account acc,List<Product> products){
+	public static Order createOrder(Integer orderNumber, LocalDateTime createdDate, String paymentMethod, Account acc,List<Product> products,User user){
 		Order order = new Order(acc);
 		order.setOrderNumber(orderNumber);
 		order.setCreatedDate(createdDate);
 		order.setPaymentMethod(paymentMethod);
 		order.setProducts(products);
+		order.setUser(user);
 		return order;
 	}
 	public static User createUser(String name,String email,String password,Boolean isAdmin) {

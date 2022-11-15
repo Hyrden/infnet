@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonTypeName;
 @Entity
 @Table (name = "tperipheral")
 public class Peripheral extends Product{
@@ -12,7 +14,7 @@ public class Peripheral extends Product{
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private int warrant;//Specify the warrant given by the manufacturer by months. Ex: a year: 12
 	private float weight;
-	
+	public Peripheral() {}
 	@Override
 	public String toString() {
 		return super.toString() + ";firmware:" + getFirmware() + 

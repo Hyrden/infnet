@@ -25,6 +25,8 @@ public class OrderTest implements ApplicationRunner {
 	public void run(ApplicationArguments args) throws Exception {
 		User user = new User();
 		user.setId(1);
+		User user2 = new User();
+		user2.setId(2);
 		Account acc = new Account();
 		acc.setId(1);		
 		Account acc2 = new Account();		
@@ -46,15 +48,15 @@ public class OrderTest implements ApplicationRunner {
 		ltProducts2.add(g1);
 		ltProducts2.add(bitdefender);
 		
-		Order o1 = DataFactory.createOrder(3148, LocalDateTime.now(), "Pagseguro",acc,ltProducts1);		
+		Order o1 = DataFactory.createOrder(3148, LocalDateTime.now(), "Pagseguro",acc,ltProducts1,user);		
 		orderService.insertOrder(o1);
 		System.out.println("Order 1 - "+o1);
 		
-		Order o2 = DataFactory.createOrder(5678, LocalDateTime.now().minusMonths(3), "Paypal",acc2,ltProducts2);		
+		Order o2 = DataFactory.createOrder(5678, LocalDateTime.now().minusMonths(3), "Paypal",acc2,ltProducts2,user2);		
 		orderService.insertOrder(o2);
 		System.out.println("Order 2 - "+o2);
 		
-		Order o3 = DataFactory.createOrder(9119, LocalDateTime.now().minusMonths(5), "EBANX",acc,ltProducts1);				
+		Order o3 = DataFactory.createOrder(9119, LocalDateTime.now().minusMonths(5), "EBANX",acc,ltProducts1,user);				
 		orderService.insertOrder(o3);
 		System.out.println("Order 3 - "+o3);
 	}

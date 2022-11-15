@@ -1,5 +1,7 @@
 package br.edu.infnet.apiorder.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,14 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
 @Entity
 @Table (name = "tproduct")
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class Product {
-	
+public class Product {	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
@@ -26,7 +31,8 @@ public abstract class Product {
 				   company;
 	@Column(name="description",length=10000)
 	private String description;
-	
+	@ManyToMany(mappedBy = "products")
+	private List<Order> orders;
 	@ManyToOne
 	@JoinColumn(name = "idUser")
 	private User user;

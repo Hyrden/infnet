@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.edu.infnet.apiproduct.model.domain.Game;
+import br.edu.infnet.apiproduct.model.domain.Peripheral;
 import br.edu.infnet.apiproduct.model.domain.Product;
+import br.edu.infnet.apiproduct.model.domain.Software;
 import br.edu.infnet.apiproduct.model.service.ProductService;
 
 @RestController
@@ -20,15 +23,23 @@ public class ProductController {
 	@Autowired
 	ProductService prodService;
 	@PostMapping(value = "/insert")
-	public void insert(@RequestBody Product product) {
-		prodService.insert(product);
+	public void insert(@RequestBody Object object) {
+		prodService.insert(object);
 	}	
 	@DeleteMapping(value = "/{id}/delete")
 	public void delete(@PathVariable Integer id) {
 		prodService.delete(id);
 	}
-	@GetMapping(value = "/list")
-	public List<Product> getList(){
-		return prodService.getList();
+	@GetMapping(value = "/game/list")
+	public List<Game> getGameList(){
+		return prodService.getGameList();
+	}
+	@GetMapping(value = "/software/list")
+	public List<Software> getSoftwareList(){
+		return prodService.getSoftwareList();
+	}
+	@GetMapping(value = "/peripheral/list")
+	public List<Peripheral> getPeripheralList(){
+		return prodService.getPeripheralList();
 	}
 }

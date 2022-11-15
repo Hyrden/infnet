@@ -3,8 +3,11 @@ package br.edu.infnet.apiproduct.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table (name = "tsoftware")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Software extends Product{
 	
 	private String license;

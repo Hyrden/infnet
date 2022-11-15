@@ -13,7 +13,7 @@
 	<!-- Navbar -->
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 	<h1>Saudações, professores e alunos</h1>
-	<p style="font-weight: bold;color: green;">Status: FEATURE 4 concluída com APIs de User e Account</p>
+	<p style="font-weight: bold;color: green;">Status: FEATURE 4 concluída com APIs de User, Account e Product</p>
 	<h4>Segue lista de todas as customizações feitas até o presente momento:</h4>
 	<p>
 		1 - Nas telas de inserção, podem existir campos obrigatório ou opcionais;<br>
@@ -44,7 +44,7 @@
 		1 - [SEGURANÇA] Ao digitar a rota no endereço, um usuário não cadastrado pode fazer DMLs;<br>
 		2 - <s>[VISUAL] Na tela de criação de usuário, se os campos Password e Repeat Password divergirem,
 		o botão de Sign Up desaparece, e o de Login vira Logout com o nome de usuário que foi tentado criar 
-		(porém o backend funciona corretamente, e o usuário não é criado)</s> <span style="color: green;font-weight: bold">CORRIGIDO</span>;
+		(porém o backend funciona corretamente, e o usuário não é criado);</s> <span style="color: green;font-weight: bold">CORRIGIDO</span>
 	</p>
 	<div class="container">
 	<div class="b-example-divider"></div>

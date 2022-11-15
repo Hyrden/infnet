@@ -1,25 +1,26 @@
 package br.edu.infnet.AppOrderProduct.model.service;
-
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.AppOrderProduct.clients.IProductClient;
 import br.edu.infnet.AppOrderProduct.model.domain.Product;
-import br.edu.infnet.AppOrderProduct.model.repository.ProductRepository;
 
 @Service
 public class ProductService {
 	@Autowired
-	private ProductRepository prodRep;
-
-	public void insertProduct(Product product) {
-		prodRep.save(product);
-	}
+	private IProductClient clientApi;
+	
 	public void deleteProduct(Integer id) {
-		prodRep.deleteById(id);
+		clientApi.delete(id);
 	}
-	public Collection<Product> getProductList(){
-		return (Collection<Product>) prodRep.findAll();
+	public List<Product> getProductList(){
+		List<Product> ltProduct = new ArrayList<>();
+		ltProduct.addAll(clientApi.getGameList());
+		ltProduct.addAll(clientApi.getPeripheralList());
+		ltProduct.addAll(clientApi.getSoftwareList());
+		return ltProduct;
 	}
 }

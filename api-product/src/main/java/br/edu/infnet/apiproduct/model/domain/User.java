@@ -6,8 +6,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 @Table (name = "tuser")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User{	
 	
 	@Id

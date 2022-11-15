@@ -59,7 +59,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.collectionVariables.set(\"id\", 4);"
+									"pm.collectionVariables.set(\"id\", 7);"
 								],
 								"type": "text/javascript"
 							}
@@ -267,6 +267,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"orderNumber\": 5555,\r\n\t\"paymentMethod\": \"Pagseguro\",\r\n\t\"account\": {\r\n\t\t\"id\": 1\r\n\t},\r\n\t\"products\": [\r\n\t\t{\r\n\t\t\t\"id\": 1\r\n\t\t}\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{order-api-endpoint}}/insert",
 							"host": [
@@ -314,16 +323,71 @@
 			"name": "product-api",
 			"item": [
 				{
-					"name": "list",
+					"name": "gameList",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{product-api-endpoint}}/list",
+							"raw": "{{product-api-endpoint}}/game/list",
 							"host": [
 								"{{product-api-endpoint}}"
 							],
 							"path": [
+								"game",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softwareList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product-api-endpoint}}/software/list",
+							"host": [
+								"{{product-api-endpoint}}"
+							],
+							"path": [
+								"software",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "peripheralList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product-api-endpoint}}/peripheral/list",
+							"host": [
+								"{{product-api-endpoint}}"
+							],
+							"path": [
+								"peripheral",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product-api-endpoint}}/product/list",
+							"host": [
+								"{{product-api-endpoint}}"
+							],
+							"path": [
+								"product",
 								"list"
 							]
 						}
@@ -335,6 +399,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"value\": 129.9,\r\n        \"name\": \"The Witcher 4\",\r\n        \"code\": \"G-CDPROJEKTRED-TW-4\",\r\n        \"category\": \"Adventure\",\r\n        \"company\": \"CD Projekt RED\",\r\n        \"description\": \"As war rages on throughout the Northern Realms, you take on the greatest contract of your life — tracking down the Child of Prophecy, a living weapon that can alter the shape of the world.\",\r\n        \"user\": {\r\n            \"id\": 1\r\n        },\r\n        \"preOrder\": false,\r\n        \"releaseDate\": \"2023-05-18\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{product-api-endpoint}}/insert",
 							"host": [
@@ -354,7 +427,7 @@
 							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.collectionVariables.set(\"id\", 5);"
+									"pm.collectionVariables.set(\"id\", 10);"
 								],
 								"type": "text/javascript"
 							}

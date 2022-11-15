@@ -3,13 +3,12 @@ package br.edu.infnet.apiproduct.model.domain;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table (name = "tperipheral")
-public class Peripheral extends Product{
-	
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Peripheral extends Product{	
 	private String firmware;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private int warrant;//Specify the warrant given by the manufacturer by months. Ex: a year: 12
 	private float weight;
 	
