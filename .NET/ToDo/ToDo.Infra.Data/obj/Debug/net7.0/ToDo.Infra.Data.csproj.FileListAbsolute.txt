@@ -1,0 +1,15 @@
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\bin\Debug\net7.0\ToDo.Infra.Data.deps.json
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\bin\Debug\net7.0\ToDo.Infra.Data.dll
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\bin\Debug\net7.0\ToDo.Infra.Data.pdb
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\bin\Debug\net7.0\ToDo.Domain.dll
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\bin\Debug\net7.0\ToDo.Domain.pdb
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.csproj.AssemblyReference.cache
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.AssemblyInfoInputs.cache
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.AssemblyInfo.cs
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.csproj.CoreCompileInputs.cache
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.csproj.CopyComplete
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.dll
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\refint\ToDo.Infra.Data.dll
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ToDo.Infra.Data.pdb
+C:\infnet\.NET\ToDo\ToDo.Infra.Data\obj\Debug\net7.0\ref\ToDo.Infra.Data.dll

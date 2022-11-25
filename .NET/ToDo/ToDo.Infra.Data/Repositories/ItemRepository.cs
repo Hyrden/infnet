@@ -81,5 +81,25 @@ namespace ToDo.Infra.Data.Repositories
                 }
             };
         }
+        public async Task DeleteAsync(String id)
+        {
+            var query = "DELETE FROM Items WHERE id = @Id";
+            using (var con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    await con.ExecuteAsync(query, id);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            };
+        }
     }
 }

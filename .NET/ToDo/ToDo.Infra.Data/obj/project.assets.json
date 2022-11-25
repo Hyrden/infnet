@@ -605,23 +605,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\eliezer.souza.junior\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\jpgal\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eliezer.souza.junior\\infnet\\hands-on\\gabarito\\ToDo\\ToDo.Infra.Data\\ToDo.Infra.Data.csproj",
+      "projectUniqueName": "C:\\infnet\\.NET\\ToDo\\ToDo.Infra.Data\\ToDo.Infra.Data.csproj",
       "projectName": "ToDo.Infra.Data",
-      "projectPath": "C:\\Users\\eliezer.souza.junior\\infnet\\hands-on\\gabarito\\ToDo\\ToDo.Infra.Data\\ToDo.Infra.Data.csproj",
-      "packagesPath": "C:\\Users\\eliezer.souza.junior\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eliezer.souza.junior\\infnet\\hands-on\\gabarito\\ToDo\\ToDo.Infra.Data\\obj\\",
+      "projectPath": "C:\\infnet\\.NET\\ToDo\\ToDo.Infra.Data\\ToDo.Infra.Data.csproj",
+      "packagesPath": "C:\\Users\\jpgal\\.nuget\\packages\\",
+      "outputPath": "C:\\infnet\\.NET\\ToDo\\ToDo.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\eliezer.souza.junior\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jpgal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -629,15 +630,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dtv-ott-middleware-all-codeartifact-domain-617167195340.d.codeartifact.us-east-1.amazonaws.com/nuget/dtv-ott-middleware-all-codeartifact-repository/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\eliezer.souza.junior\\infnet\\hands-on\\gabarito\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj": {
-              "projectPath": "C:\\Users\\eliezer.souza.junior\\infnet\\hands-on\\gabarito\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj"
+            "C:\\infnet\\.NET\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj": {
+              "projectPath": "C:\\infnet\\.NET\\ToDo\\ToDo.Domain\\ToDo.Domain.csproj"
             }
           }
         }

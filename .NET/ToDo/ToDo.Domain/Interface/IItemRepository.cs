@@ -1,4 +1,5 @@
-﻿using ToDo.Domain.Entities;
+﻿using System.Runtime.CompilerServices;
+using ToDo.Domain.Entities;
 
 namespace ToDo.Domain.Interface
 {
@@ -7,5 +8,6 @@ namespace ToDo.Domain.Interface
         Task<IEnumerable<Item>> GetAllAsync();
         Task AddAsync(Item item);
         Task EditAsync(Item item);
+        Task DeleteAsync(String id);
     }
 }
