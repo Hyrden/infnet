@@ -22,7 +22,7 @@
         {
             <tr>
                 <td>@item.Description</td>
-                <td>@item.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@item.CreatedAt</td>
                 <td><input type="checkbox" disabled @( item.Done ? "checked" : "" ) action="" /></td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>

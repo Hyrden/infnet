@@ -9,5 +9,6 @@ namespace ToDo.Domain.Interface
         Task AddAsync(Item item);
         Task EditAsync(Item item);
         Task DeleteAsync(String id);
+        Task<Item> GetItemAsync(String id);
     }
 }

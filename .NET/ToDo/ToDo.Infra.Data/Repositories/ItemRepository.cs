@@ -14,11 +14,33 @@ namespace ToDo.Infra.Data.Repositories
         {
             connectionString = configuration.GetConnectionString("ToDoDb");
         }
-
+        public async Task<Item> GetItemAsync(String id)
+        {
+            Item result;
+            var query = "SELECT * FROM Items WHERE Id = "+ "'"+id+"'";
+            using (var con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    IEnumerable<Item> aux = await con.QueryAsync<Item>(query);
+                    result = aux.ElementAt(0);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    con.Close();
+                }
+                return result;
+            };
+        }
         public async Task<IEnumerable<Item>> GetAllAsync()
         {
             IEnumerable<Item> result;
-            var query = "select * from Items";
+            var query = "SELECT * FROM Items";
             using (var con = new SqlConnection(connectionString))
             {   
                 try
@@ -83,13 +105,13 @@ namespace ToDo.Infra.Data.Repositories
         }
         public async Task DeleteAsync(String id)
         {
-            var query = "DELETE FROM Items WHERE id = @Id";
+            var query = "DELETE FROM Items WHERE Id = " + "'" + id + "'"; ;
             using (var con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
-                    await con.ExecuteAsync(query, id);
+                    await con.ExecuteAsync(query);
                 }
                 catch (Exception)
                 {
