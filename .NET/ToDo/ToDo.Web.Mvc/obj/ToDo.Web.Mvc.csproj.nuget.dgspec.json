@@ -316,6 +316,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\infnet\\.NET\\ToDo\\ToDo.Application\\ToDo.Application.csproj": {
+                "projectPath": "C:\\infnet\\.NET\\ToDo\\ToDo.Application\\ToDo.Application.csproj"
+              },
               "C:\\infnet\\.NET\\ToDo\\ToDo.CrossCutting.IoC\\ToDo.CrossCutting.IoC.csproj": {
                 "projectPath": "C:\\infnet\\.NET\\ToDo\\ToDo.CrossCutting.IoC\\ToDo.CrossCutting.IoC.csproj"
               },

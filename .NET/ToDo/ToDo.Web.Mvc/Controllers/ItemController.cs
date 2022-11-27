@@ -2,24 +2,22 @@
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using ToDo.Application;
-using ToDo.Domain.Entities;
-using ToDo.Domain.Interface;
+using ToDo.Application.Dtos.Item;
 using ToDo.Web.Mvc.Models;
 
 namespace ToDo.Web.Mvc.Controllers
 {
     public class ItemController : Controller
     {
-        protected IItemRepository repository;
         protected IItemAppService service;
 
-        public ItemController(IItemRepository repository)
+        public ItemController(IItemAppService service)
         {
-            this.repository = repository;
+            this.service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var items = await repository.GetAllAsync();
+            var items = await service.GetAllAsync();
 
             return View(items);
         }
@@ -27,59 +25,40 @@ namespace ToDo.Web.Mvc.Controllers
         public IActionResult Create()
         {
             return View();
-        }        
-
+        }
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Description")] CreateItemModel createItemModel)
         {
             if (ModelState.IsValid)
             {
-                var item = new Item(createItemModel.Description);
-                await repository.AddAsync(item);
+                var item = new ItemResponseDto();
+                item.Description = createItemModel.Description;
+                await service.AddAsync(item);
                 return RedirectToAction(nameof(Index));
             }
-
             return View(createItemModel);
         }
-        public async Task<IActionResult> Edit(string? id)
+        public async Task<IActionResult> Edit([Bind("Id", "Description", "CreatedAt", "Done")] ItemResponseDto item)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            var item = await repository.GetItemAsync(id);
-            if(item == null)
-            {
-                return NotFound();
-            }
             return View(item);
         }
         [HttpPost, ActionName("Edit")]
-        public async Task<IActionResult> EditItem(Item? item)
+        public async Task<IActionResult> EditItem([Bind("Id", "Description", "CreatedAt", "Done")] ItemResponseDto item)
         {
-            if (item == null)
-            {
-                return NotFound();
-            }
-            await repository.EditAsync(item);
-
+            Debug.WriteLine("item:" + item.Description);
+            await service.EditAsync(item);
             return RedirectToAction(nameof(Index));
         }
-        public async Task<IActionResult> Delete(string? id)
+        public async Task<IActionResult> Delete()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-            await repository.DeleteAsync(id);
-            return RedirectToAction(nameof(Index));
+            return View();
         }
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteItem(String id)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && id != null)
             {
-                await repository.DeleteAsync(id);
+                await service.DeleteAsync(id);
                 return RedirectToAction(nameof(Index));
             }
             return View();

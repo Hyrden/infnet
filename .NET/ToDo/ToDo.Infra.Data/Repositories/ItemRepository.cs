@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using ToDo.Domain.Entities;
 using ToDo.Domain.Interface;
 
@@ -84,13 +85,16 @@ namespace ToDo.Infra.Data.Repositories
 
         public async Task EditAsync(Item item)
         {
+            Debug.WriteLine("EditAsync repository");
+            Debug.WriteLine(item.Id+" "+item.Description+ " "+ item.Done);
             var count = 0;
-            var query = "update Items set Description = @Description, Done = @Done where id = @Id";
+            var query = "UPDATE Items SET Description = @Description, Done = @Done WHERE Id = @Id";
             using (var con = new SqlConnection(connectionString))
             {
                 try
                 {
                     con.Open();
+                    
                     count = await con.ExecuteAsync(query, item);
                 }
                 catch (Exception)
